@@ -1,5 +1,6 @@
 #include "stdafx.h"
 #include "modFunc.h"
+#include "printFunc.h"
 #include "RSAFunc.h"
 
 int main(int argc, char **argv){
@@ -44,7 +45,6 @@ int main(int argc, char **argv){
     if(in != NULL) BN_free(in);
     if(out != NULL) BN_free(out);
     if(b10rsa!= NULL) BOB10_RSA_free(b10rsa);
-
 
     return 0;
 

@@ -2,8 +2,8 @@
 #include "printFunc.h"
 
 void printBN(char *msg, BIGNUM *a){
-    char *number_str = BN_bn2dec(a);
-    printf("%s %s\n", msg, number_str);
+    char *number_str = BN_bn2hex(a);
+    printf("%s 0x%s\n", msg, number_str);
     OPENSSL_free(number_str);
 }
 

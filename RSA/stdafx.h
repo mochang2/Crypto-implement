@@ -8,3 +8,4 @@
 #include <stdio.h>
 #include <openssl/bn.h>
 #include <string.h>
+#include <stdbool.h>
