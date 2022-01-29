@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdbool.h>
 #include <stdlib.h>
-#include <time.h>
 #include <openssl/bn.h>
 
 #define NUM_OF_SMALL_PRIMES 70  // the fastest num I feel
@@ -47,8 +46,6 @@ bool SmallPrimeTest(BIGNUM* probprime);
 
 
 int main (int argc, char *argv[]) {
-    time_t start, end; double result; start = time(NULL);
-
     BIGNUM *sharedSecret = BN_new();
     BOB10_DH_PARAM *dhp = BOB10_DH_PARAM_new();
     BOB10_DH_KEYPAIR *aliceK = BOB10_DH_KEYPAIR_new();
@@ -78,10 +75,6 @@ int main (int argc, char *argv[]) {
     BOB10_DH_KEYPAIR_free(aliceK);
     BOB10_DH_KEYPAIR_free(bobK);
     BN_free(sharedSecret);
-
-    end = time(NULL);
-    result = (double)(end - start);
-    printf("It takes %f seconds", result);
 
     return 0;
 }
